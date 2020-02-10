@@ -133,6 +133,8 @@ https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
 
 1 : How to encryp the data disk of vm
 2 : WHat is application registration with azure directory is used for ??
+3 : How to encrypt sql data ??where arew the keys stored in?
+
 
 
 ===class 3: Securing VMs and data END==================================================
