@@ -1,0 +1,151 @@
+
+Prerequiste :
+===========
+
+courseLink:https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-203
+
+2 : https://docs.microsoft.com/en-us/azure/azure-resource-manager/
+3 : https://docs.microsoft.com/en-us/azure/security/develop/secure-web-app
+4 : https://docs.microsoft.com/en-us/azure/security/fundamentals/index
+5 : https://docs.microsoft.com/en-us/azure/security/
+6 : https://docs.microsoft.com/en-us/azure/key-vault/
+
+=================================END====================================
+
+
+azure notes
+1 : go for all services in portal
+Resouces : Any service running in azure is called resouce
+resource group:grouping the resources is called resourcegroup
+
+
+
+
+
+=======PluralSight Notes===========================
+
+
+===class 1 : Provisioning VMs=======
+1 : custom-images can be built 2 ways:
+	a)use market-image and make it modifcation and you as source image for other images
+	b)VHD:using virtual harddisk
+2 : removing machine related configurations from windows or linux os is called de-provisioning or generalising application.
+3 : custom-images can be copied between regions
+	a)azure cli -image copy extension
+	b)Powershell -Manual process
+4 : term image is used to vm provisoning
+5 : snapshot is used for disk copy 
+===class 1 : Provisioning VMs END=======
+
+
+======Class 2 :Deploying Multiple vms================
+References : 
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
+1 : policy cares about resource properties for example 
+	a) vms that allowed in particular regions
+	b) vms sku(stop keeping unit):business allowing only particualr skus and putting restrictions on the other for cost constraints
+	c) Policies are controlled/applied on the subscriptions so when we create the policy to allowed location then it will not allow to create 
+		any resources outside that location and fail in review/validation part
+
+2 : AzureDeployment command has mode incremental or complete
+	a) if incremental then it will not delete existing group
+	b) if complete then restricting to delete all and create then given command
+======Class 2 :Deploying Multiple vmsEND================
+
+
+
+===class 3: Securing VMs and data ==============================================
+
+
+1:what is SSL and TLS
+2 :MSI -> MANAGED SERVICE IDENTITY,TDE->TRANSPERENT DATA ENCRYPTION
+3 : Azure recommends to use MSI instead of keyvalut because ,there is no need to store client and secret-id of azure-active directory and validate/authenticate through it before fetching 
+	keyvalut data
+4 : To access Keyvault u neeed to perform authentication ,this can be done using azure active directory
+5 : Need to learn keyvalut
+6 : SSE :secure encryption is enabled by default to azure storage but not to vm disk
+7 : when data is stored in storage like blob,queue,page,table and etc it is encrypted by using microsoft managed key.
+8 : we can encrypt the storage data by using cutom keys,but this need to be stored in key-vault and configure azure storage to use this keys while encrypting.
+9 : data at rest and data at transit(data which will be flowed between services or through internet)
+
+
+
+
+======PluralSightNotes END=========================
+
+
+
+
+
+
+
+
+============Concepts to learn =================================
+
+1 : Virtual network ,subnet
+2 : NIC(To create nic we have to create vnet,subnet,nsg,publicIpAddress)
+3 : PublicIPAddress->static and dynamic
+4 : PrivateIPAddress
+5 : NetworkSecurityGroup
+6 : Firewall in system(opening port)
+7 : Proivsioning vms
+8 : fdisk in linux or interface parted command
+9:/etc/fstab (mount disk permantely)
+10:vm disk toplogy
+11 :SSL and TLS
+
+
+
+
+
+==========Concepts to learn END===================================
+
+========Scenerios To Learn==========================
+
+===class 1 : Provisioning VMs================================================
+
+1 : Create vm but it shouldnot be accessible from outside and vicerversa
+2 : where will ssh keys stored locally in systems or how it get authenticated
+3 : Difference between cloudshell,powershell,cli(when to use what)
+4 : Y SSH in linux and RDP in windows
+5 : How to specify inbound,tcp,priority and etc in NSR(Network security rule) using CLI(This can be achived using powershell in granular way )
+6 : what is Generalising vm for windows and de-provisioning linux vm
+7 : can we run cli commands cloudshell
+8 : how to make autoshutdown the vms using cli and powershell 
+9 : how to restrict number of vms per user or per lab using cli and poweshell
+10 : how to add artifacts while creating vm using cli and powershell,
+===class 1 : Provisioning VMs END================================================
+
+===class 2 : Deploying VMs using ARN template =================================
+1 : when you create image of the vm will it reusable??
+2 : when you create image of the vm will it be having same disk??
+3 : snapshot of the disk 
+4 : when you generalize the vm ?wil it be reusable?
+5 : If you create image of the vm witout generalizing will it get started after creating custom image?
+5 : What is RBAC and policy 
+6 : How to connect individual vms when we created scaleset??is it should be connected loadbalancer
+7 : Need to understand scaleset and loadbalancer to connect through it
+
+===class 2 : Deploying VMs using ARN template END ==================================
+
+
+===class 3: Securing VMs and data ==============================================
+
+1 : How to encryp the data disk of vm
+2 : WHat is application registration with azure directory is used for ??
+
+
+===class 3: Securing VMs and data END==================================================
+
+
+
+
+=======Scenerios To Learn END=========================
+=========ImportantLInks=================================================
+1 : https://docs.microsoft.com/en-us/azure/virtual-machines/linux/cli-manage
+
+======ImportantLinks End=================================================
+
+Important Tips for exam:
+============================
+1 : azure exam will have lot of question in azure-cli
