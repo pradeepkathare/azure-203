@@ -1,0 +1,123 @@
+https://github.com/MicrosoftDocs/azure-docs/blob/master/includes/virtual-machines-common-network-overview.md
+
+Exam Details:
+
+username :
+pwd:
+email:pradeepkathare123@gmail.com and pwd:Deepa123@
+pradeep.k@primefocus.com system@123
+
+Pradeep K
+MS ID: MS0989603162
+MCID 989603162
+
+Support request number: SR1496101142
+
+
+
+
+Basics of Network Terminolgy:
+
+1 : https://commotionwireless.net/docs/cck/networking/learn-networking-basics/
+2 : https://www.certification-questions.com/microsoft-dumps/az-203.html
+
+
+=======CERTIFICATION DUMPS START========================
+1 : https://www.certification-questions.com/microsoft-dumps/az-203.html
+2 : https://www.prepaway.com/az-203-exam.html
+3 : https://www.itexams.com/exam/AZ-203
+
+=======CERTIFICATION DUMPS END========================
+
+
+====Containers and kubernates========
+
+1 : what is os hardenning and disposable
+2 : where will be the docker volumes?
+3 : Multistage docker is used to build and run the application(example we dont need to mvn install to build image and then use docker run)
+4 : If app-service is already present in azure y we are using webapps..because appservice wont provide support for all frameworks and control on compiler installed example java -cersion and etc
+5 : WebJobs or azure functions to be triggered once message comes to queue/topic
+6 : need to look up for triggeres
+====Containers End===========
+
+=========Azure Functions============
+1 : azure functions are event based functions funtion is triggered based on some event
+2 : azure functions core tool is to be used for cross platforms like javascript and java or etc
+3 : we can use durable functions for workflows models and error handling and retrigger,or parallel tasks
+4 : Function Apps for deployment for grouping azure functions
+5 : Function app can be developed as containers
+6 : function app uses app service to run functions(need to check)
+7 : Azure functions can be http triggers/queue trigger and sb triggers and etc
+8 : App service plan is used for automation of CI/CD(need to check)
+9 : azure app service is used to run webapps or webjobs
+=====================
+
+===Azure Storage=========================
+1 : azure table storage :batch insertion for table storage can be performed only on same partation-key
+2 : SQL database as IAAS (creatiing vm installing mssql,manual patching,backup and etc) or PAAS(everything is provided by microsoft)
+3 : advantage of sql in IAAS is having all sql features and migration of data is easier and private ip address maintainence
+4 : PAAS disadvantage is no privateip and need to maintain firewall
+5 : EntityFrameowork is very important to exam its equivalent to JPA in java
+
+Table Storage : 
+
+1 : Table storage stores structured no sql data
+2 : Table storage is faster and cost-effective then relational sql database for same size of the data
+3 : Table storage has row key,partion key and timestamp as default entites(timestamp is updated everytime record is inserted)(each row in table is called as entity)
+4 : Table storage can have upto 252 properties
+5 : Naming conventions in table-storage are storage account,table,entity,properties
+6 : An Table-storage entity can size upto 1 mb and cosmos db storage can account upto 2mb
+7 : Cosmos-db storage has more benfits then table-storage like latency,scalbility,failover and etc..storage is optimized in azurestorage then cosmosdb
+8 : Table storage guidelines to read data efficently are :
+		a) specifiy row and partation-key in queries
+		b) denormalizing the data:avoid unneccessary of creating more tables and keep into  single table
+		c) query projections : ( Projection refers to that subset of the set of all columns found in a table, that you want returned)so we can reduce data transfer size because it includes only required fields.
+		d) compound keys:maintain composite/compound keys ( a composite key is a candidate key that consists of two or more attributes (table columns) that together uniquely identify an entity occurrence )
+9 : Table-storage guidelines to write efficently are :
+        a) dont create hot partions keys :means choose the keys that spread request to multiple  partions.
+		b) avoid seperate table for entities
+		c) avoid network spikes
+		d) maintain throughput to high latency
+10 : Table Service storage looks same as relational table.except storing multiple entites in same table.
+11 : Table Service Storage ,Every entity stored should have uniqueness for the combination of partation-key and row-key which is used as indexing
+12 : Table  storage uses only primary indexing there is no secoundary indexing
+13 : Table Partions : Table partiation happens on 3 keys account name,table name,partation name
+14: Entity Group Transactions:Entity group transactions are inbuilt bulk operations..Bulk operations are performed within partations
+15 :EGT are 
+16 :Table Service read operations can performed by the best query:
+		a) Point Query : Here query uses  partation-key and row key  to retrieve 1 entity.
+		b) Range Query : Here query use 1 partation-key and multiple row keys to retrive multiple entites.
+		c) Partation-scan:here query uses 1 partation-key and multiplse row-keys in or conditions(Partation-scan can also be performes on partation-key and non-row keys)
+		d) Table-Scan :here query uses ,entire table to search  retrieve the data
+	Note :Table services always return the entites in sorted order based on  partation-key and then row key.These keys are string values.sorting for numeric values should have fixed-length and pad them zeros.
+17 : Storage service Authorization
+		a) All authorized request must include date(UTC) header and Authorization header
+		b)Authorization header value format is Authorization="[SharedKey|SharedKeyLite] <AccountName>:<Signature>" 
+		c) Signature is formed from the below format :
+			StringToSign = VERB(PUT,GET) + "\n" +   
+               Content-MD5 + "\n" +   
+               Content-Type + "\n" +  
+               Date + "\n" +  
+               CanonicalizedResource;  if they dont have values then \n to be specified
+		d) If any http request contains duplicate headers,it sends 400 bad request.
+18 :Shared access policy in Storage services:
+		Below storage services supports the access-policy.
+			a) Blob container,Files,Tables,Queues(access policy are like read and write operations)
+		Access policy can be created in xml forma for the given SignedIdentifier
+ ``		Attempting to set more than five access policies at one time results in the service returning status code 400 (Bad Request).
+19 :CORS:cross origin resource sharing->Allowing resources from one domain to access other domain.
+20 :Query Timeout and Pagination:
+		Max of 1000 results can be fetched at one time.
+		Query max execution time is 5 secounds
+		Total time alloated to request for scheduling and processing the query is 30s
+21 : Pagination in Table service is achieved by beloow parameters
+		NextTableName,NextPartitionKey,NextRowKey->used by request for the continuation of getting response
+		x-ms-continuation-NextTableName,x-ms-continuation-NextPartitionKey,x-ms-continuation-NextRowKey->sent by response to use in the request to get nect setup values
+
+		
+
+
+		
+		 
+
+ 
