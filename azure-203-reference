@@ -113,8 +113,8 @@ Table Storage :
 21 : Pagination in Table service is achieved by beloow parameters
 		NextTableName,NextPartitionKey,NextRowKey->used by request for the continuation of getting response
 		x-ms-continuation-NextTableName,x-ms-continuation-NextPartitionKey,x-ms-continuation-NextRowKey->sent by response to use in the request to get nect setup values
-========================================		
-
+=======================================
+*********************************************
 
 		
 		 
