@@ -60,7 +60,7 @@ Basics of Network Terminolgy:
 5 : EntityFrameowork is very important to exam its equivalent to JPA in java
 
 Table Storage : 
-
+======================
 1 : Table storage stores structured no sql data
 2 : Table storage is faster and cost-effective then relational sql database for same size of the data
 3 : Table storage has row key,partion key and timestamp as default entites(timestamp is updated everytime record is inserted)(each row in table is called as entity)
@@ -113,8 +113,7 @@ Table Storage :
 21 : Pagination in Table service is achieved by beloow parameters
 		NextTableName,NextPartitionKey,NextRowKey->used by request for the continuation of getting response
 		x-ms-continuation-NextTableName,x-ms-continuation-NextPartitionKey,x-ms-continuation-NextRowKey->sent by response to use in the request to get nect setup values
-		********************************************************************************************************************************
-		
+========================================		
 
 
 		
